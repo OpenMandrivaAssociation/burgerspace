@@ -1,6 +1,6 @@
 %define name	burgerspace
 %define version 1.8.1
-%define release 1mdk
+%define release  %mkrel 1
 
 Summary:	A Burgertime(TM) clone
 Name: 		%{name}
