@@ -73,7 +73,7 @@ bzcat %{SOURCE3} > $RPM_BUILD_ROOT/%{_liconsdir}/%{name}.png
 %doc AUTHORS COPYING HACKING INSTALL NEWS README THANKS TODO
 %{_bindir}/burgerspace
 %{_datadir}/sounds/*
-%{_mandir}/man6/burgerspace.6.bz2
+%{_mandir}/man6/burgerspace.6*
 %{_menudir}/*
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
