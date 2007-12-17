@@ -13,7 +13,6 @@ Source3:	%{name}-48x48.png.bz2
 License:	GPL
 URL:		http://www3.sympatico.ca/sarrazip/dev/burgerspace.html
 Group:		Games/Arcade
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	pkgconfig
 BuildRequires:	SDL1.2-devel >= 1.2.0
 BuildRequires:	SDL_image-devel >= 1.2.0
