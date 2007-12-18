@@ -42,11 +42,15 @@ P to pause the game and resume it. The Escape key quits the game.
 make DESTDIR=$RPM_BUILD_ROOT install
 
 # Menu
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat >$RPM_BUILD_ROOT%{_menudir}/%{name} <<EOF
-?package(%{name}): command="%{_bindir}/%{name}" needs="X11" \
-icon="%{name}.png" section="Amusement/Arcade" \
-title="Burgerspace" longtitle="Burgerspace is a Burgertime(TM) clone"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application <<EOF
+Exec=%{_bindir}/%{name}
+Icon=%{name}
+Categories=Game;ArcadeGame;
+Name=Burgerspace
+Comment=Burgerspace is a Burgertime(TM) clone
 EOF
   
 #icon
@@ -75,7 +79,7 @@ rm -fr %buildroot/%_defaultdocdir/%name-*
 %{_bindir}/burgerspace
 %{_datadir}/sounds/*
 %{_mandir}/man6/burgerspace.6*
-%{_menudir}/*
+%{_datadir}/applications/mandriva-*.desktop
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
