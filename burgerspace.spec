@@ -57,6 +57,8 @@ bzcat %{SOURCE1} > $RPM_BUILD_ROOT/%{_miconsdir}/%{name}.png
 bzcat %{SOURCE2} > $RPM_BUILD_ROOT/%{_iconsdir}/%{name}.png
 bzcat %{SOURCE3} > $RPM_BUILD_ROOT/%{_liconsdir}/%{name}.png
 
+rm -fr %buildroot/%_defaultdocdir/%name-*
+
 %post
 %{update_menus}
 
