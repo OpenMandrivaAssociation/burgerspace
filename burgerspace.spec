@@ -11,7 +11,7 @@ Source1:	%{name}-16x16.png.bz2
 Source2:	%{name}-32x32.png.bz2
 Source3:	%{name}-48x48.png.bz2
 License:	GPL
-URL:		http://perso.b2b2c.ca/sarrazip/dev/burgerspace.html
+URL:		http://sarrazip.com/dev/burgerspace.html
 Group:		Games/Arcade
 BuildRequires:	pkgconfig
 BuildRequires:	SDL1.2-devel >= 1.2.0
