@@ -1,5 +1,5 @@
 %define name	burgerspace
-%define version 1.8.1
+%define version 1.8.2
 %define release  %mkrel 1
 
 Summary:	A Burgertime(TM) clone
@@ -23,7 +23,7 @@ BuildRequires:	flatzebra-devel >= 0.1.1
 Clone of the Burgertime video game.  You are a chef that must walk
 over hamburger ingredients in a maze while avoiding enemies.
 
-Use the arrow keys to move, the left Ctrl key to throw pepper, and 
+Use the arrow keys to move, the left Ctrl key to throw pepper, and
 P to pause the game and resume it. The Escape key quits the game.
 
 %prep
@@ -38,7 +38,7 @@ P to pause the game and resume it. The Escape key quits the game.
 %install
  [ -n "${RPM_BUILD_ROOT}" -a "${RPM_BUILD_ROOT}" != / ] \
  && rm -rf ${RPM_BUILD_ROOT}/
- 
+
 make DESTDIR=$RPM_BUILD_ROOT install
 
 # Menu
@@ -52,7 +52,7 @@ Categories=Game;ArcadeGame;
 Name=Burgerspace
 Comment=Burgerspace is a Burgertime(TM) clone
 EOF
-  
+
 #icon
 install -d $RPM_BUILD_ROOT/%{_iconsdir}
 install -d $RPM_BUILD_ROOT/%{_miconsdir}
@@ -75,7 +75,7 @@ rm -fr %buildroot/%_defaultdocdir/%name-*
 
 %files
 %defattr(-, root, root)
-%doc AUTHORS COPYING HACKING INSTALL NEWS README THANKS TODO
+%doc AUTHORS COPYING  INSTALL NEWS README THANKS TODO
 %{_bindir}/burgerspace
 %{_datadir}/sounds/*
 %{_mandir}/man6/burgerspace.6*
@@ -84,6 +84,6 @@ rm -fr %buildroot/%_defaultdocdir/%name-*
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %_datadir/applications/*
-%_datadir/pixmaps/*.png 
- 
+%_datadir/pixmaps/*.png
+
 
