@@ -1,16 +1,16 @@
 %define name	burgerspace
-%define version 1.8.2
-%define release  %mkrel 3
+%define version 1.8.3
+%define release  %mkrel 1
 
 Summary:	A Burgertime(TM) clone
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source0: 	%{name}-%{version}.tar.bz2
+Source0: 	http://perso.b2b2c.ca/sarrazip/dev/%{name}-%{version}.tar.gz
 Source1:	%{name}-16x16.png.bz2
 Source2:	%{name}-32x32.png.bz2
 Source3:	%{name}-48x48.png.bz2
-License:	GPL
+License:	GPLv2+
 URL:		http://sarrazip.com/dev/burgerspace.html
 Group:		Games/Arcade
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
@@ -18,7 +18,10 @@ BuildRequires:	pkgconfig
 BuildRequires:	SDL1.2-devel >= 1.2.0
 BuildRequires:	SDL_image-devel >= 1.2.0
 BuildRequires:  SDL_mixer-devel >= 1.2.0
-BuildRequires:	flatzebra-devel >= 0.1.1
+BuildRequires:	flatzebra-devel >= 0.1.2
+#explicit require because non stable api/abi
+#remove if lib major changes
+Requires:       libflatzebra0.1_2 >= 0.1.2
 
 %description
 Clone of the Burgertime video game.  You are a chef that must walk
@@ -41,18 +44,6 @@ P to pause the game and resume it. The Escape key quits the game.
  && rm -rf ${RPM_BUILD_ROOT}/
 
 make DESTDIR=$RPM_BUILD_ROOT install
-
-# Menu
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
-cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
-[Desktop Entry]
-Type=Application <<EOF
-Exec=%{_bindir}/%{name}
-Icon=%{name}
-Categories=Game;ArcadeGame;
-Name=Burgerspace
-Comment=Burgerspace is a Burgertime(TM) clone
-EOF
 
 #icon
 install -d $RPM_BUILD_ROOT/%{_iconsdir}
@@ -84,7 +75,6 @@ rm -fr %buildroot/%_defaultdocdir/%name-*
 %{_bindir}/burgerspace
 %{_datadir}/sounds/*
 %{_mandir}/man6/burgerspace.6*
-%{_datadir}/applications/mandriva-*.desktop
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
