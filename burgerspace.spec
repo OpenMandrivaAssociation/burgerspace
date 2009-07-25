@@ -1,27 +1,24 @@
 %define name	burgerspace
 %define version 1.8.3
-%define release  %mkrel 1
+%define release  %mkrel 2
 
 Summary:	A Burgertime(TM) clone
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
+License:	GPLv2+
+Group:		Games/Arcade
+URL:		http://sarrazip.com/dev/burgerspace.html
 Source0: 	http://perso.b2b2c.ca/sarrazip/dev/%{name}-%{version}.tar.gz
 Source1:	%{name}-16x16.png.bz2
 Source2:	%{name}-32x32.png.bz2
 Source3:	%{name}-48x48.png.bz2
-License:	GPLv2+
-URL:		http://sarrazip.com/dev/burgerspace.html
-Group:		Games/Arcade
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	pkgconfig
 BuildRequires:	SDL1.2-devel >= 1.2.0
 BuildRequires:	SDL_image-devel >= 1.2.0
 BuildRequires:  SDL_mixer-devel >= 1.2.0
 BuildRequires:	flatzebra-devel >= 0.1.2
-#explicit require because non stable api/abi
-#remove if lib major changes
-Requires:       libflatzebra0.1_2 >= 0.1.2
+BuildRoot: 	%{_tmppath}/%{name}-%{version}
 
 %description
 Clone of the Burgertime video game.  You are a chef that must walk
@@ -34,24 +31,20 @@ P to pause the game and resume it. The Escape key quits the game.
 %setup -q
 
 %build
-./configure --prefix=%{_prefix} --datadir=%{_datadir} \
-	--libdir=%{_libdir} --mandir=%{_mandir}
+%configure
 %make
-# CXXFLAGS="-DNDEBUG -O2"
 
 %install
- [ -n "${RPM_BUILD_ROOT}" -a "${RPM_BUILD_ROOT}" != / ] \
- && rm -rf ${RPM_BUILD_ROOT}/
-
-make DESTDIR=$RPM_BUILD_ROOT install
+rm -rf %{buildroot}
+%makeinstall_std
 
 #icon
-install -d $RPM_BUILD_ROOT/%{_iconsdir}
-install -d $RPM_BUILD_ROOT/%{_miconsdir}
-install -d $RPM_BUILD_ROOT/%{_liconsdir}
-bzcat %{SOURCE1} > $RPM_BUILD_ROOT/%{_miconsdir}/%{name}.png
-bzcat %{SOURCE2} > $RPM_BUILD_ROOT/%{_iconsdir}/%{name}.png
-bzcat %{SOURCE3} > $RPM_BUILD_ROOT/%{_liconsdir}/%{name}.png
+install -d %{buildroot}%{_iconsdir}
+install -d %{buildroot}%{_miconsdir}
+install -d %{buildroot}%{_liconsdir}
+bzcat %{SOURCE1} > %{buildroot}%{_miconsdir}/%{name}.png
+bzcat %{SOURCE2} > %{buildroot}%{_iconsdir}/%{name}.png
+bzcat %{SOURCE3} > %{buildroot}%{_liconsdir}/%{name}.png
 
 rm -fr %buildroot/%_defaultdocdir/%name-*
 
@@ -66,8 +59,7 @@ rm -fr %buildroot/%_defaultdocdir/%name-*
 %endif
 
 %clean
- [ -n "${RPM_BUILD_ROOT}" -a "${RPM_BUILD_ROOT}" != / ] \
- && rm -rf ${RPM_BUILD_ROOT}/
+rm -rf %{buildroot}
 
 %files
 %defattr(-, root, root)
