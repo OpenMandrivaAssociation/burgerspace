@@ -9,7 +9,7 @@ Source0: 	http://perso.b2b2c.ca/sarrazip/dev/%{name}-%{version}.tar.gz
 Source1:	%{name}-16x16.png.bz2
 Source2:	%{name}-32x32.png.bz2
 Source3:	%{name}-48x48.png.bz2
-BuildRequires:	SDL1.2-devel >= 1.2.0
+BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	SDL_image-devel >= 1.2.0
 BuildRequires:	SDL_mixer-devel >= 1.2.0
 BuildRequires:	flatzebra-devel >= 0.1.5
