@@ -48,8 +48,10 @@ bzcat %{SOURCE3} > %{buildroot}%{_liconsdir}/%{name}.png
 %files
 %doc AUTHORS COPYING  INSTALL NEWS README THANKS TODO
 %{_bindir}/burgerspace
+%{_bindir}/burgerspace-server
 %{_datadir}/sounds/*
 %{_mandir}/man6/burgerspace.6*
+%{_mandir}/man6/burgerspace-server.6*
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
