@@ -13,6 +13,8 @@ BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	SDL_image-devel >= 1.2.0
 BuildRequires:	SDL_mixer-devel >= 1.2.0
 BuildRequires:	flatzebra-devel >= 0.1.5
+# this one is really needed only in 2011
+BuildRequires:	libstdc++-static-devel
 
 %description
 Clone of the Burgertime video game.  You are a chef that must walk
