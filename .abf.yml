@@ -1,5 +1,7 @@
+removed_sources:
+  burgerspace-1.9.1.tar.gz: 0fde5a99b143bdb1ef4ee9a16de46835876d6fe2
 sources:
-  "burgerspace-1.9.1.tar.gz": 0fde5a99b143bdb1ef4ee9a16de46835876d6fe2
-  "burgerspace-16x16.png.bz2": ffb41eccde67825ac01b58b06e8711419c90facb
-  "burgerspace-32x32.png.bz2": a3e30b1b4e444c5982e9c200d744867c858ad0ba
-  "burgerspace-48x48.png.bz2": 8bec329bb7417ec4188c7d4f2840cb3a2e1a53f1
+  burgerspace-1.9.2.tar.gz: 0d1e62df6ab2abdfdaa2301c2fbadd0439e107c3
+  burgerspace-16x16.png.bz2: ffb41eccde67825ac01b58b06e8711419c90facb
+  burgerspace-32x32.png.bz2: a3e30b1b4e444c5982e9c200d744867c858ad0ba
+  burgerspace-48x48.png.bz2: 8bec329bb7417ec4188c7d4f2840cb3a2e1a53f1
