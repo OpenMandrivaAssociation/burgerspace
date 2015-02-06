@@ -1,6 +1,6 @@
 Name:		burgerspace
 Version:	1.9.2
-Release:	1
+Release:	2
 Summary:	A Burgertime(TM) clone
 License:	GPLv2+
 Group:		Games/Arcade
