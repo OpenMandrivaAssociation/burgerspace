@@ -1,14 +1,14 @@
 Name:		burgerspace
-Version:	1.9.2
-Release:	2
+Version:	1.9.3
+Release:	1
 Summary:	A Burgertime(TM) clone
 License:	GPLv2+
 Group:		Games/Arcade
 URL:		http://sarrazip.com/dev/burgerspace.html
-Source0: 	http://perso.b2b2c.ca/sarrazip/dev/%{name}-%{version}.tar.gz
-Source1:	%{name}-16x16.png.bz2
-Source2:	%{name}-32x32.png.bz2
-Source3:	%{name}-48x48.png.bz2
+Source0: 	http://perso.b2b2c.ca/~sarrazip/dev/%{name}-%{version}.tar.gz
+Source1:	%{name}-16x16.png
+Source2:	%{name}-32x32.png
+Source3:	%{name}-48x48.png
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_image)
 BuildRequires:	pkgconfig(SDL_mixer)
@@ -37,9 +37,9 @@ P to pause the game and resume it. The Escape key quits the game.
 %__mkdir_p %{buildroot}%{_iconsdir}
 %__mkdir_p %{buildroot}%{_miconsdir}
 %__mkdir_p %{buildroot}%{_liconsdir}
-bzcat %{SOURCE1} > %{buildroot}%{_miconsdir}/%{name}.png
-bzcat %{SOURCE2} > %{buildroot}%{_iconsdir}/%{name}.png
-bzcat %{SOURCE3} > %{buildroot}%{_liconsdir}/%{name}.png
+cp %{SOURCE1} %{buildroot}%{_miconsdir}/%{name}.png
+cp %{SOURCE2} %{buildroot}%{_iconsdir}/%{name}.png
+cp %{SOURCE3} %{buildroot}%{_liconsdir}/%{name}.png
 
 %__rm -fr %{buildroot}%{_defaultdocdir}/%{name}-*
 
