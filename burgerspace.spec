@@ -4,7 +4,7 @@ Release:	2
 Summary:	A Burgertime(TM) clone
 License:	GPLv2+
 Group:		Games/Arcade
-URL:		http://sarrazip.com/dev/burgerspace.html
+URL:		https://sarrazip.com/dev/burgerspace.html
 Source0: 	http://perso.b2b2c.ca/~sarrazip/dev/%{name}-%{version}.tar.gz
 Source1:	%{name}-16x16.png
 Source2:	%{name}-32x32.png
