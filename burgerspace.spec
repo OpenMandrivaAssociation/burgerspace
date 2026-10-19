@@ -15,6 +15,13 @@ BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	make
 BuildRequires:	pkgconfig(flatzebra-0.2) >= 0.2.0
+# flatzebra-0.2.pc inlines SDL Cflags/Libs and does not Requires them.
+# Public headers include <SDL.h>, <SDL_image.h>, <SDL_mixer.h>, <SDL2_gfxPrimitives.h>.
+BuildRequires:	pkgconfig(sdl2)
+BuildRequires:	pkgconfig(SDL2_image)
+BuildRequires:	pkgconfig(SDL2_mixer)
+BuildRequires:	pkgconfig(SDL2_gfx)
+BuildRequires:	pkgconfig(SDL2_ttf)
 # this one is really needed only in 2011
 #BuildRequires:	libstdc++-static-devel
 
