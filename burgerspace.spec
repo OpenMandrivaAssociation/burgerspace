@@ -1,6 +1,6 @@
 Name:		burgerspace
-Version:	1.9.3
-Release:	2
+Version:	1.10.0
+Release:	1
 Summary:	A Burgertime(TM) clone
 License:	GPLv2+
 Group:		Games/Arcade
@@ -14,10 +14,7 @@ BuildRequires:	automake
 BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	make
-BuildRequires:	pkgconfig(sdl)
-BuildRequires:	pkgconfig(SDL_image)
-BuildRequires:	pkgconfig(SDL_mixer)
-BuildRequires:	flatzebra-devel >= 0.1.5
+BuildRequires:	pkgconfig(flatzebra-0.2) >= 0.2.0
 # this one is really needed only in 2011
 #BuildRequires:	libstdc++-static-devel
 
