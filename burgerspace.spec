@@ -55,10 +55,10 @@ cp %{SOURCE3} %{buildroot}%{_liconsdir}/%{name}.png
 %files
 %doc AUTHORS COPYING  INSTALL NEWS README THANKS TODO
 %{_bindir}/burgerspace
-%{_bindir}/burgerspace-server
-%{_datadir}/sounds/*
+# 1.10 dropped the network server. Sounds and level pixmaps moved here.
+%{_datadir}/%{name}/
+%{_datadir}/pixmaps/%{name}/
 %{_mandir}/man6/burgerspace.6*
-%{_mandir}/man6/burgerspace-server.6*
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
